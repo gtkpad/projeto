@@ -32,7 +32,7 @@ class Usuarios extends Model{
     }
 
     public function deletaUsuario($id){
-        $sql = "DELETE FROM recupera_senha WHERE usuario_id = :id";
+        $sql = "DELETE FROM recuperar_senha WHERE usuario_id = :id";
         $sql = $this->pdo->prepare($sql);
         $sql->bindValue(":id", $id);
         $sql->execute();

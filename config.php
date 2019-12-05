@@ -9,11 +9,11 @@ $config = array();
 
 if( ENVIRONMENT == 'development' ):
     define('EMAIL_RECUPERA', '');
-    define('BASE_URL', 'http://localhost/projeto/');
+    define('BASE_URL', 'http://localhost/github/projeto/');
     $config['dbname'] = 'projeto';
     $config['host'] = 'localhost';
-    $config['username'] = '';
-    $config['password'] = '';
+    $config['username'] = 'gabriel';
+    $config['password'] = 'G@BrI&L';
 else:
     define('EMAIL_RECUPERA', '');
     define('BASE_URL', '');
