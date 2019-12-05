@@ -1,5 +1,9 @@
 # Projeto
 
+## Exemplo
+
+[projeto](http://projeto.gvpadilha.com.br)
+
 ## Sistema Gerenciador de Produtos
 
 Sistema de cadastro de produtos com dois níveis de usuário, usuário administrador pode adicionar, visualizar, editar e remover produtos, usuários, marcas e Categoras. O usuário normal pode apenas listar produtos, categorias e marcas.
@@ -71,7 +75,7 @@ define('ENVIRONMENT', 'development');
 ?>
 ```
 
-###.htaccess
+### .htaccess
 
 ```
 RewriteEngine On
@@ -84,5 +88,5 @@ RewriteRule ^(.*)$ /projeto/index.php?url=$1 [QSA,L]
 
 ## Banco de dados
 
-####no arquivo projeto.sql está o banco de dados necessário para o funcionamento do sistema
+#### no arquivo projeto.sql está o banco de dados necessário para o funcionamento do sistema
 
