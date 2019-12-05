@@ -52,7 +52,7 @@ class Categoria extends Model{
     }
 
     public function edit($data = array()){
-        if (!array_key_exists('nome', $data) && !array_key_exists('id', $data))
+        if (!array_key_exists('nome', $data) || !array_key_exists('id', $data))
             return false;
         $sql = "UPDATE categoria SET nome = :nome WHERE id = :id";
         $sql = $this->pdo->prepare($sql);

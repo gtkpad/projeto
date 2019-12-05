@@ -59,7 +59,7 @@ class Usuarios extends Model{
     }
 
     public function createUser($data = array()){
-        if (!array_key_exists('nome', $data) && !array_key_exists('email', $data) && !array_key_exists('senha', $data) && !array_key_exists('grupo', $data))
+        if (!array_key_exists('nome', $data) || !array_key_exists('email', $data) || !array_key_exists('senha', $data) || !array_key_exists('grupo', $data))
             return false;
 
         $sql = "INSERT INTO usuario (nome, email, senha, grupo_id) VALUES (:nome, :email, :senha, :grupo)";

@@ -23,6 +23,7 @@ Sistema de cadastro de produtos com dois níveis de usuário, usuário administr
 ```
 PHP >= 7.0
 mod_rewrite ativado
+apache com permissão de escrita no diretório do sistema
 ```
 
 ### Instalação

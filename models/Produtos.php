@@ -127,7 +127,7 @@ class Produtos extends Model{
     }
 
     public function create($data = array()){
-        if (!array_key_exists('nome', $data) && !array_key_exists('categoria', $data) && !array_key_exists('marca', $data) && !array_key_exists('usuario', $data) && !array_key_exists('imagem', $data)  && !array_key_exists('descricao', $data))
+        if (!array_key_exists('nome', $data) || !array_key_exists('categoria', $data) || !array_key_exists('marca', $data) || !array_key_exists('usuario', $data) || !array_key_exists('imagem', $data)  || !array_key_exists('descricao', $data))
             return false;
 
         $sql = "INSERT INTO produto (nome, descricao, imagem, usuario_id, categoria_id, marca_id) VALUES (:nome, :descricao, :imagem, :usuario, :categoria, :marca)";
@@ -161,7 +161,7 @@ class Produtos extends Model{
     }
 
     public function edit($data = array()){
-        if (!array_key_exists('nome', $data) && !array_key_exists('categoria', $data) && !array_key_exists('marca', $data) && !array_key_exists('usuario', $data) && !array_key_exists('imagem', $data)  && !array_key_exists('descricao', $data) && !array_key_exists('id', $data))
+        if (!array_key_exists('nome', $data) || !array_key_exists('categoria', $data) || !array_key_exists('marca', $data) ||!array_key_exists('usuario', $data) || !array_key_exists('imagem', $data)  || !array_key_exists('descricao', $data) || !array_key_exists('id', $data))
             return false;
 
         $sql = "UPDATE produto SET nome = :nome, descricao = :descricao, imagem = :imagem, usuario_id = :usuario, categoria_id = :categoria, marca_id = :marca WHERE id = :id";

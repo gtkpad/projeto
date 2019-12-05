@@ -3,10 +3,22 @@
  * Controller responsável pela autenticação de usuários e verificação de permissões
  */
 class authController extends Controller {
+    
+    public function verifySession(){
+        $tempo = $_SESSION['tempo'] + 7200; 
+        if(time() > $tempo):
+            session_destroy();
+            header("Location: ".BASE_URL);
+            exit();
+        else:
+            $_SESSION['tempo'] = time();
+        endif;
+    }
 
     public function adminAuth(){
         
         if ($_SESSION['auth'] == true):
+            $this->verifySession();
             $usuario = new Usuarios();
             $usuario = $usuario->getUserId($_SESSION['usuario']);
             $permissoes = explode(';', $usuario['permissoes']);
@@ -23,6 +35,7 @@ class authController extends Controller {
 
     public function userAuth(){
         if ($_SESSION['auth'] == true):
+            $this->verifySession();
             $usuario = new Usuarios();
             $usuario = $usuario->getUserId($_SESSION['usuario']);
             $permissoes = explode(';', $usuario['permissoes']);
@@ -36,6 +49,7 @@ class authController extends Controller {
 
     public function isLoggedIn(){
         if ($_SESSION['auth'] == true):
+            $this->verifySession();
             header("Location: ".BASE_URL);
         else:
             return false;
@@ -44,6 +58,7 @@ class authController extends Controller {
 
     public function authLogin($email, $pass){
         if ( !empty($email) && !empty($pass) ):
+            
             $user = new Usuarios();
             $user = $user->getAuth($email);
             if ( $user != false ):
@@ -52,6 +67,7 @@ class authController extends Controller {
                     $_SESSION['usuario'] = $user['id'];
                     $_SESSION['nome_usuario'] = $user['nome'];
                     $_SESSION['permissoes'] = explode(';', $user['permissoes']);
+                    $_SESSION['tempo'] = time();
                     return true;
                 endif;
             endif;

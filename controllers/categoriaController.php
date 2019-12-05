@@ -4,7 +4,8 @@
  * 
  */
 class categoriaController extends Controller{
-
+    protected $auth;
+    
     public function __construct(){
         $this->auth = new authController();
         if(! $this->auth->userAuth() ):
@@ -15,7 +16,7 @@ class categoriaController extends Controller{
 
     public function adicionar(){
         $this->adminRedirect();
-        if ($_POST['nome']):
+        if (!empty($_POST['nome'])):
             $categoria = new Categoria();
 
             $nome = addslashes($_POST['nome']);

@@ -33,7 +33,7 @@ class recuperaSenha extends Model{
     }
 
     public function generateHash($data = array()){
-        if (!array_key_exists('hash', $data) && !array_key_exists('usuario', $data))
+        if (!array_key_exists('hash', $data) || !array_key_exists('usuario', $data))
             return false;
         $sql = "INSERT INTO recuperar_senha (hash, usuario_id, usado) VALUES (:hash, :usuario, 0)";
         $sql = $this->pdo->prepare($sql);
