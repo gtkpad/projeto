@@ -38,6 +38,7 @@ class produtoController extends Controller{
             if (!empty($_FILES['imagem'])):
                 $tmpnomedaimagem = $this->recebeImagem($imagem);
                 if ($tmpnomedaimagem != false):
+                    unlink('assets/images/produtos/'.$nomedaimagem);
                     $nomedaimagem = $tmpnomedaimagem;
                 else:
                     header("Location: ".BASE_URL."usuario/abrir/".$id);
@@ -92,7 +93,9 @@ class produtoController extends Controller{
         $this->adminRedirect();
         $produto = new Produtos();
         if($produto->validId($id)):
-            if($produto->deletar($id)):
+            $dbproduto = $produto->getID($id);
+            if($produto->deletar($id)):        
+                unlink('assets/images/produtos/'.$dbproduto['imagem']);
                 echo 1;
             else:
                 echo 0;
