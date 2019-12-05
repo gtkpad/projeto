@@ -15,7 +15,7 @@
 
 ## Sistema Gerenciador de Produtos
 
-Sistema de cadastro de produtos com dois níveis de usuário, usuário administrador pode adicionar, visualizar, editar e remover produtos, usuários, marcas e Categoras. O usuário normal pode apenas listar produtos, categorias e marcas.
+Sistema de cadastro de produtos com dois níveis de usuário, usuário administrador pode adicionar, visualizar, editar e remover produtos, usuários, marcas e categorias. O usuário normal pode apenas listar produtos, categorias e marcas.
 
 ### Pré-requisitos
 
@@ -30,7 +30,7 @@ mod_rewrite ativado
 Clone o projeto no diretório em que irá rodar, será necessário editar o arquivo .htaccess, config.php e environment.php
 
 
-No arquivo config.php será configurado a URL em que o sistema irá ser acessado, email que enviará recuperação de senha e banco de dados, tendo opção de rodar em modo desenvolvimento ou produção, qual modo é utilizado será configurado no arquivo config.php 
+No arquivo config.php será configurado a URL em que o sistema irá ser acessado, email que enviará recuperação de senha e banco de dados, tendo opção de rodar em modo desenvolvimento ou produção, qual modo é utilizado será configurado no arquivo environment.php 
 
 ### config.php
 
