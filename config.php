@@ -12,8 +12,8 @@ if( ENVIRONMENT == 'development' ):
     define('BASE_URL', 'http://localhost/projeto/');
     $config['dbname'] = 'projeto';
     $config['host'] = 'localhost';
-    $config['username'] = 'gabriel';
-    $config['password'] = 'G@BrI&L';
+    $config['username'] = '';
+    $config['password'] = '';
 else:
     define('EMAIL_RECUPERA', '');
     define('BASE_URL', '');
