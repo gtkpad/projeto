@@ -43,11 +43,11 @@ $config = array();
 
 if( ENVIRONMENT == 'development' ):
     define('EMAIL_RECUPERA', 'exemplo@exemplo.com.br');
-    define('BASE_URL', 'http://localhost/projeto/');
-    $config['dbname'] = 'projeto';
-    $config['host'] = 'localhost';
-    $config['username'] = '';
-    $config['password'] = '';
+    define('BASE_URL', 'http://localhost/projeto/'); 
+    $config['dbname'] = 'projeto'; //nome do banco de dados
+    $config['host'] = 'localhost'; //endereço do banco de dados
+    $config['username'] = ''; //usuario do banco de dados
+    $config['password'] = ''; //senha do banco de dados
 else:
     define('EMAIL_RECUPERA', '');
     define('BASE_URL', '');
