@@ -6,6 +6,13 @@
 
 [projeto](http://projeto.gvpadilha.com.br)
 
+### Usuários
+##### Administrador
+###### Email: admin@email.com Senha: 123456789
+##### Usuário
+###### Email: user@email.com Senha: 123456789
+
+
 ## Sistema Gerenciador de Produtos
 
 Sistema de cadastro de produtos com dois níveis de usuário, usuário administrador pode adicionar, visualizar, editar e remover produtos, usuários, marcas e Categoras. O usuário normal pode apenas listar produtos, categorias e marcas.
